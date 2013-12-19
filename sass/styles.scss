@@ -1,0 +1,75 @@
+// import compass 功能
+// Reset & Defaults
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/utilities/general/clearfix";
+ 
+// Compass Sprite
+@import "img/*.png"; //import img資料夾中所有PNG圖檔（要做css sprie用）
+@include all-img-sprites; // include 打包img中設定的圖檔編譯成css sprie  // 如果要單一檔案手動的話 用 @include img-sprite(file-name);
+ 
+%remove-text {
+  text-indent: -9999px;
+  display:block;
+}
+ 
+// Clearfix
+header, section, footer {
+  @include pie-clearfix;
+}
+ 
+body { background: url(../images/bg.jpg) repeat;}
+ 
+// Wraper
+.wrap {
+  width:482px;
+  margin:0 auto;
+}
+ 
+// Header
+header {
+  a.img-logo {
+    width: 212px;
+    height: 141px;
+    margin: 12px auto 28px;
+  }//將logo放入header中 //加入超連結
+}
+ 
+// Content
+section {
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0px 2px 4px rgba( 0, 0, 0,.3 );
+  width: 482px;
+  height: 123px;
+  nav {
+    padding: 20px 14px 12px 15px;
+    overflow: auto;
+    > li {
+      float: left;
+      a {
+        width: 93px;
+        height: 93px;
+        display: block;
+      }//加入超連結
+    }//加入清單結構
+    li + li {
+      margin-left: 27px;
+    }
+  }
+}
+ 
+// Footer
+footer {
+  padding: 40px 0;
+  p {text-align: center;
+    font-family: Helvetica;
+    font-size: 15px;
+    color: #47617a;
+    @include text-shadow (0 1px 0 rgba(255,255,255,.5), 0  0 0 rgba(0,0,0,.2));
+  }//文字段落元素
+}
+ 
+.img-sprite, .img-Star1, .img-Star2, .img-Star3, .img-Star4, .img-logo {
+  @extend %remove-text;
+}
