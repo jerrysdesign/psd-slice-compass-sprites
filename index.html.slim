@@ -13,13 +13,9 @@ html lang="en-US"
           a.img-logo href="#" Slices
       section
         nav
-          li.img-Star1
-            a href="#" Star1
-          li.img-Star2
-            a href="#" Star2
-          li.img-Star3
-            a href="#" Star3
-          li.img-Star4
-            a href="#" Star4
+          - (1..4).each do |n|
+            //li.img-Star#{n}
+            li class="img-Star#{n}"
+              a href="#" Star#{n}
       footer
         p To learn how to tag areas for exporting, browse the layers in this PSD…
