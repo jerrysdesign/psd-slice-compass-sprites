@@ -12,10 +12,9 @@
   text-indent: -9999px;
   display:block;
 }
- 
-// Clearfix
-header, section, footer {
-  @include pie-clearfix;
+
+%clearfix {
+  @include pie-clearfix
 }
  
 body { background: url(../images/bg.jpg) repeat;}
@@ -28,6 +27,7 @@ body { background: url(../images/bg.jpg) repeat;}
  
 // Header
 header {
+  @extend %clearfix
   a.img-logo {
     width: 212px;
     height: 141px;
@@ -37,6 +37,7 @@ header {
  
 // Content
 section {
+  @extend %clearfix
   border-radius: 12px;
   background: #fff;
   box-shadow: 0px 2px 4px rgba( 0, 0, 0,.3 );
@@ -61,6 +62,7 @@ section {
  
 // Footer
 footer {
+  @extend %clearfix
   padding: 40px 0;
   p {text-align: center;
     font-family: Helvetica;
